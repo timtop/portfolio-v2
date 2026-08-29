@@ -1,0 +1,297 @@
+@font-face {
+  font-family: "Recoleta Alt";
+  src: url("fonts/Latinotype - Recoleta Alt Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("fonts/Onest-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fdfdfd;
+  font-family: "Onest", sans-serif;
+  color: #3a3a2e;
+  --cols: 6;
+  --col-width: calc(100vw / var(--cols));
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.05) 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent var(--col-width)
+  );
+}
+
+/* Page container — starts at the 2nd grid line, ends at the 6th */
+.container {
+  margin-left: var(--col-width);
+  margin-right: var(--col-width);
+  padding: 0;
+}
+
+/* Header — sits above the hero wrapper */
+.header {
+  padding: 28px 0;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* Hero wrapper — flex column, fills viewport minus header */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 92px);
+  max-height: 880px;
+}
+
+/* Hero */
+.hero {
+  padding: 40px 0 0;
+  max-width: 80%;
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f6f2ec;
+  color: #545047;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+}
+
+.headline {
+  font-family: "Recoleta Alt", serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.12;
+  color: #545047;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  /* max-width: 10px; */
+}
+
+/* Hidden until fonts load and the intro animation starts (JS only) */
+.js .headline,
+.js .subtext,
+.js .hero-cta {
+  visibility: hidden;
+}
+
+.line-wrap {
+  display: block;
+  overflow: hidden;
+}
+
+.line {
+  display: block;
+}
+
+.subtext {
+  font-size: 14.5px;
+  color: #6b6b5b;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  max-width: 50%;
+}
+
+.highlight {
+  color: #fc6701;
+  text-decoration: none;
+}
+
+.highlight:hover {
+  text-decoration: underline;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fc6701;
+  color: white;
+  font-family: "Onest", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #cf4209;
+}
+
+.cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logos Section — pushed to bottom via space-between */
+.logos-section {
+  padding: 48px 0 60px;
+}
+
+.logos-label {
+  font-size: 13px;
+  color: #9e9e8a;
+  margin-bottom: 16px;
+}
+
+.logos-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+
+.logo-item img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.logo-item:hover {
+  opacity: 1;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 80px 0 120px;
+}
+
+.projects-label {
+  font-family: "Recoleta Alt", serif;
+  font-size: 20px;
+  color: #9e9e8a;
+  margin-bottom: 20px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+a.project-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  border-radius: 12px;
+  transition:
+    background-color 0.3s ease,
+    padding 0.3s ease;
+  /* border-top: 1px solid #e8e6e0; */
+  cursor: pointer;
+}
+
+.project-item:hover {
+  background-color: #ffecdb;
+  padding: 40px 24px;
+}
+/* 
+.project-item:last-child {
+  border-bottom: 1px solid #e8e6e0;
+} */
+
+.project-number {
+  font-size: 13px;
+  color: #9e9e8a;
+  font-family: "Onest", sans-serif;
+  min-width: 32px;
+  align-self: flex-start;
+  padding-top: 10px;
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-name {
+  font-family: "Recoleta Alt", serif;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 400;
+  color: #3a3a2e;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.project-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tag-icon {
+  height: 20px;
+  width: auto;
+  opacity: 1;
+}
+
+.project-cta {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 426px) {
+  body {
+    --cols: 3;
+    --col-width: calc(100vw / 3);
+  }
+
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
+  }
+
+  .hero,
+  .subtext {
+    max-width: 100%;
+  }
+  .project-item {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .project-cta {
+    margin-left: 0;
+  }
+}
