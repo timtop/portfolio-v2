@@ -99,12 +99,12 @@
         <main class="hero">
           <div class="location-badge">
             <img src="image/map-pin.svg" alt="" width="14" height="14" />
-            Lagos, Nigeria
+            Remote
           </div>
 
           <h1 class="headline">
-            6 years &ndash; Building better experiences for organisations and
-            startups.
+            <span id="years-count">6</span> years &ndash; Building better
+            experiences for organisations and startups.
           </h1>
 
           <p class="subtext">
@@ -171,10 +171,100 @@
         <div class="project-list">
           <a
             target="_blank"
-            href="https://www.servicebroker.de/"
+            href="https://report.wearecheck.co/"
             class="project-item"
           >
             <span class="project-number">01</span>
+            <div class="project-info">
+              <h2 class="project-name">NGX Report</h2>
+              <div class="project-tags">
+                <img
+                  src="image/webflow-logo.svg"
+                  alt="Webflow"
+                  class="tag-icon"
+                />
+              </div>
+            </div>
+            <span class="cta-button project-cta">
+              Visit website
+              <span class="cta-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="9"
+                    cy="9"
+                    r="8"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M6 9h6M9 6l3 3-3 3"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </a>
+
+          <a
+            target="_blank"
+            href="https://verisian.com/"
+            class="project-item"
+          >
+            <span class="project-number">02</span>
+            <div class="project-info">
+              <h2 class="project-name">Verisian</h2>
+              <div class="project-tags">
+                <img
+                  src="image/webflow-logo.svg"
+                  alt="Webflow"
+                  class="tag-icon"
+                />
+              </div>
+            </div>
+            <span class="cta-button project-cta">
+              Visit website
+              <span class="cta-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="9"
+                    cy="9"
+                    r="8"
+                    stroke="white"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M6 9h6M9 6l3 3-3 3"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </a>
+
+          <a
+            target="_blank"
+            href="https://www.servicebroker.de/"
+            class="project-item"
+          >
+            <span class="project-number">03</span>
             <div class="project-info">
               <h2 class="project-name">Service-Broker</h2>
               <div class="project-tags">
@@ -215,7 +305,7 @@
           </a>
 
           <a target="_blank" href="https://buptires.com/" class="project-item">
-            <span class="project-number">02</span>
+            <span class="project-number">04</span>
             <div class="project-info">
               <h2 class="project-name">BUP</h2>
               <div class="project-tags">
@@ -261,7 +351,7 @@
             href="https://www.ritefoodsltd.com/"
             class="project-item"
           >
-            <span class="project-number">03</span>
+            <span class="project-number">05</span>
             <div class="project-info">
               <h2 class="project-name">Rite</h2>
               <div class="project-tags">
@@ -306,6 +396,12 @@
     </section>
 
     <script>
+      const startYear = 2020;
+      const yearsEl = document.getElementById("years-count");
+      if (yearsEl) {
+        yearsEl.textContent = new Date().getFullYear() - startYear;
+      }
+
       gsap.registerPlugin(SplitText);
 
       document.fonts.ready.then(() => {
